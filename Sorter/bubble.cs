@@ -8,37 +8,37 @@
 
     class bubble
     {
-        public int[] A; //array to sort or sorted array
+        public int[] arrayToSort; //array to sort or sorted array
 
-        public System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        public System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
 
 
         public void sort()
         {
-            sw.Start();
+            stopWatch.Start();
             bubble_sort();
-            sw.Stop();
+            stopWatch.Stop();
         }
 
         private void bubble_sort()
         {
-            bool f = true;
-            int temp, n = A.Length - 1, i, j;
-            while (f)
+            bool check = true;
+            int temp, arrayLength = arrayToSort.Length - 1, i, j;
+            while (check)
             {
-                f = false;
-                for (i = 0; i < n; i++)
+                check = false;
+                for (i = 0; i < arrayLength; i++)
                 {
                     j = i + 1;
-                    if (A[i] > A[j])
+                    if (arrayToSort[i] > arrayToSort[j])
                     {
-                        temp = A[i];
-                        A[i] = A[j];
-                        A[j] = temp;
-                        f = true;
+                        temp = arrayToSort[i];
+                        arrayToSort[i] = arrayToSort[j];
+                        arrayToSort[j] = temp;
+                        check = true;
                     }
                 }
-                n--;
+                arrayLength--;
             }
         }
     }

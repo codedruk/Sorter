@@ -8,31 +8,31 @@
 
     class Insertion
     {
-        public int[] A; //array to sort or sorted array
+        public int[] arrayToSort;
 
-        public System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        public System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
 
         public void sort()
         {
-            sw.Start();
+            stopWatch.Start();
             insertion();
-            sw.Stop();
+            stopWatch.Stop();
         }
 
         void insertion()
         {
-            int n = A.Length;
+            int arrayLength = arrayToSort.Length;
             int x, temp;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < arrayLength; i++)
             {
                 x = 0;
                 for (int j = i - 1; j >= 0; j--)
                 {
-                    if (A[i - x] < A[j])
+                    if (arrayToSort[i - x] < arrayToSort[j])
                     {
-                        temp = A[i - x];
-                        A[i - x] = A[j];
-                        A[j] = temp;
+                        temp = arrayToSort[i - x];
+                        arrayToSort[i - x] = arrayToSort[j];
+                        arrayToSort[j] = temp;
                         x++;
                     }
                     else

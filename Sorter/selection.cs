@@ -8,35 +8,35 @@
 
     class Selection
     {
-        public int[] A; //array to sort or sorted array
+        public int[] arrayToSort;
 
-        public System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        public System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
 
         public void sort()
         {
-            sw.Start();
+            stopWatch.Start();
             selection();
-            sw.Stop();
+            stopWatch.Stop();
         }
 
         void selection()
         {
             int min, temp;
             int i, j;
-            int n = A.Length;
-            for (j = 0; j < n - 1; j++)
+            int arrayLength = arrayToSort.Length;
+            for (j = 0; j < arrayLength - 1; j++)
             {
                 min = j;
-                for (i = j + 1; i < n; i++)
+                for (i = j + 1; i < arrayLength; i++)
                 {
-                    if (A[i] < A[min])
+                    if (arrayToSort[i] < arrayToSort[min])
                         min = i;
                 }
                 if (min != j)
                 {
-                    temp = A[min];
-                    A[min] = A[j];
-                    A[j] = temp;
+                    temp = arrayToSort[min];
+                    arrayToSort[min] = arrayToSort[j];
+                    arrayToSort[j] = temp;
                 }
             }
         }

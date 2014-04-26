@@ -60,110 +60,110 @@ namespace Sorter
         {
             bubble x = new bubble();
             string[] a = richTextBox1.Lines;
-            x.A = CInt(ref a);
+            x.arrayToSort = ConvertToInt(ref a);
             x.sort();
-            richTextBox1.Lines = CStr(ref x.A);
-            toolStripStatusLabel1.Text = "ticks:" + x.sw.ElapsedTicks.ToString() +
-                "  milisec:" + x.sw.ElapsedMilliseconds.ToString();
+            richTextBox1.Lines = ConvertToStr(ref x.arrayToSort);
+            toolStripStatusLabel1.Text = "ticks:" + x.stopWatch.ElapsedTicks.ToString() +
+                "  milisec:" + x.stopWatch.ElapsedMilliseconds.ToString();
         }
 
         #region
-        public double CDbl(string a)
+        public double ConvertToDbl(string a)
         { return Convert.ToDouble(a); }
-        public double CDbl(ref string a)
+        public double ConvertToDbl(ref string a)
         { return Convert.ToDouble(a); }
 
-        public string CStr(double a)
+        public string ConvertToStr(double a)
         { return a.ToString(); }
-        public string CStr(ref double a)
+        public string ConvertToStr(ref double a)
         { return a.ToString(); }
-        public string CStr(ref int a)
+        public string ConvertToStr(ref int a)
         { return a.ToString(); }
 
-        public int CInt(double a)
+        public int ConvertToInt(double a)
         { return Convert.ToInt32(a); }
-        public int CInt(ref double a)
+        public int ConvertToInt(ref double a)
         { return Convert.ToInt32(a); }
-        public int CInt(ref string a)
+        public int ConvertToInt(ref string a)
         { return Convert.ToInt32(a); }
 
         // convert string to double
-        public double[] CDbl(ref string[] a)
+        public double[] ConvertToDbl(ref string[] stringIn)
         {
-            int al = a.Length;
+            int al = stringIn.Length;
             double[] d = new double[al];
             for (int i = 0; i < al; i++)
-                d[i] = CDbl(ref a[i]);
+                d[i] = ConvertToDbl(ref stringIn[i]);
             return d;
         }
 
         // convert double to string
-        public string[] CStr(ref double[] a)
+        public string[] ConvertToStr(ref double[] dblIn)
         {
-            int al = a.Length;
+            int al = dblIn.Length;
             string[] s = new string[al];
             for (int i = 0; i < al; i++)
-                s[i] = CStr(ref a[i]);
+                s[i] = ConvertToStr(ref dblIn[i]);
             return s;
         }
 
         // convert double to string
-        public string[] CStr(ref int[] a)
+        public string[] ConvertToStr(ref int[] intIn)
         {
-            int al = a.Length;
+            int al = intIn.Length;
             string[] s = new string[al];
             for (int i = 0; i < al; i++)
-                s[i] = CStr(ref a[i]);
+                s[i] = ConvertToStr(ref intIn[i]);
             return s;
         }
 
         // convert double to integer
-        public int[] CInt(ref double[] a)
+        public int[] ConvertToInt(ref double[] dblIn)
         {
-            int al = a.Length;
+            int al = dblIn.Length;
             int[] r = new int[al];
             for (int i = 0; i < al; i++)
-                r[i] = CInt(ref a[i]);
+                r[i] = ConvertToInt(ref dblIn[i]);
             return r;
         }
 
         // convert double to integer
-        public int[] CInt(ref string[] a)
+        public int[] ConvertToInt(ref string[] strIn)
         {
-            int al = a.Length;
+            int al = strIn.Length;
             int[] r = new int[al];
             for (int i = 0; i < al; i++)
-                r[i] = CInt(ref a[i]);
+                r[i] = ConvertToInt(ref strIn[i]);
             return r;
         }
 
         // convert string to double
-        public double[][] CDbl(ref string[][] a)
+        public double[][] ConvertToDbl(ref string[][] strIn)
         {
-            int al = a.Length;
+            int al = strIn.Length;
             double[][] r = new double[al][];
             for (int i = 0; i < al; i++)
-                r[i] = CDbl(ref a[i]);
+                r[i] = ConvertToDbl(ref strIn[i]);
             return r;
         }
 
         // convert double to string
-        public string[][] CStr(ref double[][] a)
+        public string[][] ConvertToStr(ref double[][] dblIn)
         {
-            int al = a.Length;
+            int al = dblIn.Length;
             string[][] r = new string[al][];
             for (int i = 0; i < al; i++)
-                r[i] = CStr(ref a[i]);
+                r[i] = ConvertToStr(ref dblIn[i]);
             return r;
         }
 
         // convert double to integer
-        public int[][] CInt(ref double[][] a)
+        public int[][] ConvertToInt(ref double[][] dblIn)
         {
-            int al = a.Length;
+            int al = dblIn.Length;
             int[][] r = new int[al][];
             for (int i = 0; i < al; i++)
-                r[i] = CInt(ref a[i]);
+                r[i] = ConvertToInt(ref dblIn[i]);
             return r;
         }
         #endregion
@@ -173,11 +173,11 @@ namespace Sorter
         {
             Insertion x = new Insertion();
             string[] a = richTextBox1.Lines;
-            x.A = CInt(ref a);
+            x.arrayToSort = ConvertToInt(ref a);
             x.sort();
-            richTextBox1.Lines = CStr(ref x.A);
-            toolStripStatusLabel1.Text = "ticks:" + x.sw.ElapsedTicks.ToString() +
-                "  milisec:" + x.sw.ElapsedMilliseconds.ToString();
+            richTextBox1.Lines = ConvertToStr(ref x.arrayToSort);
+            toolStripStatusLabel1.Text = "ticks:" + x.stopWatch.ElapsedTicks.ToString() +
+                "  milisec:" + x.stopWatch.ElapsedMilliseconds.ToString();
 
         }
 
@@ -186,11 +186,11 @@ namespace Sorter
         {
             Selection x = new Selection();
             string[] a = richTextBox1.Lines;
-            x.A = CInt(ref a);
+            x.arrayToSort = ConvertToInt(ref a);
             x.sort();
-            richTextBox1.Lines = CStr(ref x.A);
-            toolStripStatusLabel1.Text = "ticks:" + x.sw.ElapsedTicks.ToString() +
-                "  milisec:" + x.sw.ElapsedMilliseconds.ToString();
+            richTextBox1.Lines = ConvertToStr(ref x.arrayToSort);
+            toolStripStatusLabel1.Text = "ticks:" + x.stopWatch.ElapsedTicks.ToString() +
+                "  milisec:" + x.stopWatch.ElapsedMilliseconds.ToString();
 
         }
 
@@ -199,11 +199,11 @@ namespace Sorter
         {
             Merge x = new Merge();
             string[] a = richTextBox1.Lines;
-            x.A = CInt(ref a);
+            x.arrayToSort = ConvertToInt(ref a);
             x.sort();
-            richTextBox1.Lines = CStr(ref x.A);
-            toolStripStatusLabel1.Text = "ticks:" + x.sw.ElapsedTicks.ToString() +
-                "  milisec:" + x.sw.ElapsedMilliseconds.ToString();
+            richTextBox1.Lines = ConvertToStr(ref x.arrayToSort);
+            toolStripStatusLabel1.Text = "ticks:" + x.stopWatch.ElapsedTicks.ToString() +
+                "  milisec:" + x.stopWatch.ElapsedMilliseconds.ToString();
 
         }
 
@@ -211,7 +211,7 @@ namespace Sorter
         private void button5_Click(object sender, EventArgs e)
         {
             string[] a = richTextBox1.Lines;
-            int[] x = CInt(ref a);
+            int[] x = ConvertToInt(ref a);
             bool b = true;
             for (int i = 0; i < x.Length - 1; i++)
             {
@@ -231,7 +231,12 @@ namespace Sorter
             Random r = new Random();
             for (int i = 0; i < rnd.Length; i++)
                 rnd[i] = r.Next();
-            richTextBox1.Lines = CStr(ref rnd);
+            richTextBox1.Lines = ConvertToStr(ref rnd);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

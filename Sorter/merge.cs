@@ -8,16 +8,16 @@
 
     class Merge
     {
-        public int[] A; //array to sort or sorted array
+        public int[] arrayToSort;
 
-        public System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        public System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
 
         public void sort()
         {
-            sw.Start();
-            int n = A.Length - 1;
-            mergeSort(0, n);
-            sw.Stop();
+            stopWatch.Start();
+            int arrayLength = arrayToSort.Length - 1;
+            mergeSort(0, arrayLength);
+            stopWatch.Stop();
         }
 
         private void mergeSort(int p, int r)
@@ -40,9 +40,9 @@
             int[] R = new int[m + 1];
 
             for (i = 0; i < l; i++)
-                L[i] = A[p + i];
+                L[i] = arrayToSort[p + i];
             for (j = 0; j < m; j++)
-                R[j] = A[q + j + 1];
+                R[j] = arrayToSort[q + j + 1];
 
             L[l] = R[m] = int.MaxValue;
 
@@ -51,11 +51,11 @@
             {
                 if (L[i] <= R[j])
                 {
-                    A[k] = L[i++];
+                    arrayToSort[k] = L[i++];
                 }
                 else
                 {
-                    A[k] = R[j++];
+                    arrayToSort[k] = R[j++];
                 }
             }
         }
